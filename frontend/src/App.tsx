@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import io from 'socket.io-client'
 import { z } from 'zod';
 import './App.css';
@@ -10,14 +10,14 @@ const ChatForm = z.object({
   name: z.string(),
   message: z.string(),
 })
-type ChatForm = z.infer<typeof ChatForm>
+type ChatFormType = z.infer<typeof ChatForm>
 
 const App = () => {
   const [ token, setToken ] = useState('')
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<ChatForm>();
-  const [ messages, setMessages ] = useState<(ChatForm & { token: string, date: string })[]>([])
+  const { register, handleSubmit, reset } = useForm<ChatFormType>();
+  const [ messages, setMessages ] = useState<(ChatFormType & { token: string, date: string })[]>([])
 
-  const onSubmit = (data: ChatForm) => {
+  const onSubmit = (data: ChatFormType) => {
     console.log('Message sent')
     socket.emit("sendMessage", JSON.stringify({ token, ...data }))
     reset({ message: '' })
