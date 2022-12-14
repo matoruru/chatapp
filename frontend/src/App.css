@@ -1,0 +1,33 @@
+.inputFields {
+  width: 300px;
+  position: absolute;
+  bottom: 0;
+}
+
+p.message {
+  width: 300px;
+}
+
+p.message.myself {
+  width: 300px;
+  text-align: right;
+}
+
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputFields textarea {
+  line-height: 1em;
+  height: calc(1em * 15);
+}
+
+.buttonWrapper {
+  width: 100%;
+  text-align: right;
+}
+
+.inputFields .button {
+  width: 50%;
+}
