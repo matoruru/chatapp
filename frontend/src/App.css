@@ -26,8 +26,10 @@ input, textarea {
 .buttonWrapper {
   width: 100%;
   text-align: right;
+  margin-bottom: 20px;
 }
 
-.inputFields .button {
+.buttonWrapper input {
   width: 50%;
+  height: 60px;
 }

@@ -48,10 +48,10 @@ const App = () => {
         { buildMessages() }
       </>
       <form className='inputFields' onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="name" {...register("name")} />
-        <textarea placeholder="message" {...register("message")} />
+        <input type="text" placeholder="名前" {...register("name")} />
+        <textarea placeholder="メッセージを入力" {...register("message")} />
         <div className='buttonWrapper'>
-          <input type="submit" />
+          <input type="submit" value="送信" />
         </div>
       </form>
     </div>
